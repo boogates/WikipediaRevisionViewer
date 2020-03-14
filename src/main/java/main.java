@@ -1,6 +1,11 @@
 import domain.Editor;
 import exceptions.PageNotFoundException;
 import exceptions.ParameterIsNotJsonStringExceptio;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import utils.CheckUtils;
 import utils.ParseUtils;
 import utils.AnalyzeUtils;
@@ -10,7 +15,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 
-public class main {
+public class main extends Application {
 
     public static void main(String[] args) throws IOException, PageNotFoundException {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -58,5 +63,12 @@ public class main {
         }catch (ParameterIsNotJsonStringExceptio e){
             System.out.println("ParameterIsNotJsonStringExceptio");
         }
+    }
+
+
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
     }
 }
